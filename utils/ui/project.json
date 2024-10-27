@@ -1,0 +1,30 @@
+{
+  "name": "utils-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "utils/ui/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/utils/ui",
+        "main": "utils/ui/src/index.ts",
+        "tsConfig": "utils/ui/tsconfig.lib.json",
+        "assets": ["utils/ui/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "utils/ui/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

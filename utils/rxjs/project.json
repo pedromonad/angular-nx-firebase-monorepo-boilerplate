@@ -1,0 +1,30 @@
+{
+  "name": "utils-rxjs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "utils/rxjs/src",
+  "projectType": "library",
+  "targets": {
+    "brxjsld": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/utils/rxjs",
+        "main": "utils/rxjs/src/index.ts",
+        "tsConfig": "utils/rxjs/tsconfig.lib.json",
+        "assets": ["utils/rxjs/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "utils/rxjs/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

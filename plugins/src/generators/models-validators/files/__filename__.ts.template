@@ -1,0 +1,10 @@
+
+import { <%= model %> } from '@angular-nx-firebase-monorepo/firestore/models';
+import { CustomError } from '@angular-nx-firebase-monorepo/utils/errors';
+import { <%= standaloneValidator %> } from './ajv-validators/<%= standaloneValidatorFile %>';
+
+export function valid<%= model %> (data: <%= model %>) {
+  if (!<%= standaloneValidator %>(data)) {
+    throw new CustomError('<%= model %> is invalid');
+  }
+}

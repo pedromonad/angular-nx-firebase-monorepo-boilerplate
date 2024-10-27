@@ -1,0 +1,45 @@
+<mat-card class="card-coin-list">
+  <mat-card-header>
+    <mat-card-title>Coins</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Add coin</mat-label>
+        <input
+          formControlName="coin"
+          matInput
+          placeholder="coin description"
+          #addCoinInput
+        />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="coin-add-button"
+        (click)="addCoin(addCoinInput.value)"
+      >
+        Add Coin
+      </button>
+    </form>
+    <mat-list>
+      @for (coin of coins(); track $index) {
+        <mat-list-item class="row-coin">
+          <div class="coin-actions">
+            {{ coin.id }}
+            <button
+              type="button"
+              mat-raised-button
+              class="coin-delete"
+              (click)="deleteCoin(coin.id)"
+            >
+              Delete
+            </button>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      }
+    </mat-list>
+  </mat-card-content>
+</mat-card>

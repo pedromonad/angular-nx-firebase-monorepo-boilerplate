@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@angular-nx-firebase-monorepo/firestore/models": [
+        "firestore/models/src/index.ts"
+      ],
+      "@angular-nx-firebase-monorepo/firestore/queries": [
+        "firestore/queries/src/index.ts"
+      ],
+      "@angular-nx-firebase-monorepo/firestore/schemas": [
+        "firestore/schemas/src/index.ts"
+      ],
+      "@angular-nx-firebase-monorepo/firestore/validators": [
+        "firestore/validators/src/index.ts"
+      ],
+      "@angular-nx-firebase-monorepo/plugins": ["plugins/src/index.ts"],
+      "@angular-nx-firebase-monorepo/utils/errors": [
+        "utils/errors/src/index.ts"
+      ],
+      "@angular-nx-firebase-monorepo/utils/rxjs": ["utils/rxjs/src/index.ts"],
+      "@angular-nx-firebase-monorepo/utils/ui": ["utils/ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
