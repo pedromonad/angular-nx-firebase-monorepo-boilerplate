@@ -6,6 +6,8 @@
 
 ## Start the app
 
+First of all, create a firebase project and config the `apps/coins/src/environments/environment.development.ts`. Don't forget to enable the authentications!
+
 To start the development server run `nx serve coins`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
 ## Generate code
